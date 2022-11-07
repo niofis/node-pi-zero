@@ -1,10 +1,17 @@
 #!/bin/bash
 # By Steven de Salas
+# Updated by niofis
 
 # Based on script by Richard Stanley @ https://github.com/audstanley/Node-MongoDb-Pi/
 # This is for a RaspberryPi Zero but should work across all models.
 
-VERSION=v13.0.0;
+if [[ -z "${VERSION}" ]]; then
+  VERSION="v18.9.1"
+  echo "***********************************************"
+  echo "VERSION not set, using ${VERSION}."
+  echo "visit https://unofficial-builds.nodejs.org/download/release/ for a list of available versions."
+  echo "***********************************************"
+fi
 
 # Creates directory for downloads, and downloads node
 cd ~/ && mkdir temp && cd temp;
